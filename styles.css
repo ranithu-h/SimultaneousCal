@@ -147,6 +147,7 @@ p1{
 
 .buttons {
     display: flex;
+    flex-wrap: nowrap; 
     flex-direction: column;
     align-items: center;
     gap: 75px;
