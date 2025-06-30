@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="initial scale=1, width=device-width">
+        <link href="/static/styles.css" rel="stylesheet">
+        <link href="/static/ico2.ico" rel="icon">
+        <p style="text-align: right; font-size: 15px;">
+            <input name="color" selected type="radio" value="dark" id="dark">Dark
+            <input name="color" type="radio" value="red" id="red">Flamey Red
+            <input name="color" type="radio" value="light" id="light">Light
+            <input name="color" type="radio" value="blue" id="blue">Smooth Blue
+        </p>
+        
+        {% block body %}{% endblock %}
+</html>

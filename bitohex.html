@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="initial scale=1, width=device-width">
+        <link href="styles.css" rel="stylesheet">
+        <link href="ico2.ico" rel="icon">
+        <title>Binary to Hexadecimal Converter</title>
+    </head>
+    <body>
+        <p style="text-align: right; font-size: 15px;">
+            <input name="color" checked type="radio" value="dark" id="dark">Dark
+            <input name="color" type="radio" value="red" id="red">Flamey Red
+            <input name="color" type="radio" value="light" id="light">Light
+            <input name="color" type="radio" value="blue" id="blue">Smooth Blue
+        </p>
+
+        <form id="bitohex">
+            <input autofocus id="bin" type="text" placeholder="Enter Binary" style="width: 80px;">
+            <input type="submit">
+            <h3>Your Hexadecimal is: </h3><h4></h4><h2></h2>
+            <script>
+                document.querySelector('#bitohex').addEventListener('keyup', function(event) {
+                    event.preventDefault();
+
+                    let bnum = document.querySelector('#bin').value;
+                    let hex = "";
+                    let hexAR = ['A','B','C','D','E','F'];
+
+                    if ((bnum.length % 4) !== 0){
+                        bnum = '0'.repeat(4 - (bnum.length % 4)) + bnum;
+                    }
+                    
+                    for (let count = 0; count < bnum.length; count += 4){
+                        let tot = 0;
+                        let insert = bnum.slice(count, count + 4);
+                        for (let i = 0; i < 4; i++){
+                            if (insert.slice(i,i+1) === '1'){
+                                if (i == 0){
+                                    tot += 8;
+                                } else if (i == 1) {
+                                    tot += 4;
+                                } else if (i == 2) {
+                                    tot += 2;
+                                } else {
+                                    tot += 1;
+                                }
+                            }
+                        }
+
+                        if (tot > 9){
+                            hex += hexAR[tot-10]
+                        }
+                        else{
+                            hex += String(tot)
+                        }
+
+                    }
+
+                    document.querySelector('h4').innerHTML = hex
+
+                    document.querySelector('#bitohex').addEventListener('submit', function(event) {
+                        event.preventDefault();
+
+                        document.querySelector('h4').innerHTML = '';
+                        document.querySelector('h2').innerHTML = hex;
+                    });
+                    
+                    if (event.key === 'Enter') {
+                        document.querySelector('h4').innerHTML = '';
+                    }
+
+                });
+            </script>
+        </form>
+
+        <script src="script.js"></script>
+    </body>
+</html>

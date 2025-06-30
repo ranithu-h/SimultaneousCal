@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="initial scale=1, width=device-width">
+        <link href="styles.css" rel="stylesheet">
+        <link href="ico2.ico" rel="icon">
+        <title>Denary to Hexadecimal Converter</title>
+    </head>
+    <body>
+        <p style="text-align: right; font-size: 15px;">
+            <input name="color" selected type="radio" value="dark" id="dark">Dark
+            <input name="color" type="radio" value="red" id="red">Flamey Red
+            <input name="color" type="radio" value="light" id="light">Light
+            <input name="color" type="radio" value="blue" id="blue">Smooth Blue
+        </p>
+
+        <form id="dentohex">
+            <input autofocus id="den" type="text" placeholder="Enter Denary" style="width: 80px;">
+            <input type="submit">
+            <h3>Your Hexadecimal is: </h3><h4></h4><h2></h2>
+            <script>
+                document.querySelector('#dentohex').addEventListener('keyup', function(event){
+                    event.preventDefault();
+
+                    let dnum = Number(document.querySelector('#den').value);
+                    let hnum = '';
+                    let hexAR = ['A','B','C','D','E','F'];
+
+                    while (dnum >= 1){
+                        let value = String(dnum % 16);
+                        dnum = Math.floor(dnum / 16);
+
+                        if (value > 9){
+                            hnum = hexAR[value - 10] + hnum;
+                        }
+                        else{
+                            hnum = value + hnum;
+                        }
+                    }
+                    document.querySelector('h4').innerHTML = hnum;
+
+                    document.querySelector('#dentohex').addEventListener('submit', function(event) {
+                        event.preventDefault();
+
+                        document.querySelector('h4').innerHTML = '';
+                        document.querySelector('h2').innerHTML = hnum;
+                    });
+                    
+                    if (event.key === 'Enter') {
+                        document.querySelector('h4').innerHTML = '';
+                    }
+
+                });
+            </script>
+        </form>
+
+        <script src="script.js"></script>
+    </body>
+</html>

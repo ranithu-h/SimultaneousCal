@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="initial scale=1, width=device-width">
+        <link href="styles.css" rel="stylesheet">
+        <link href="ico2.ico" rel="icon">
+        <title>Hexadecimal to Denary Converter</title>
+    </head>
+    <body>
+        <p style="text-align: right; font-size: 15px;">
+            <input name="color" selected type="radio" value="dark" id="dark">Dark
+            <input name="color" type="radio" value="red" id="red">Flamey Red
+            <input name="color" type="radio" value="light" id="light">Light
+            <input name="color" type="radio" value="blue" id="blue">Smooth Blue
+        </p>
+
+        <form id="hextoden">
+            <input autofocus id="hex" type="text" placeholder="Enter Hexadecimal" style="width: 80px;">
+            <input type="submit">
+            <h3>Your Denary is: </h3><h4></h4><h2></h2>
+            <script>
+                document.querySelector('#hextoden').addEventListener('keyup', function(event){
+                    event.preventDefault();
+
+                    let hnum = document.querySelector('#hex').value;
+                    let dnum = 0;
+
+                    for (let count = 0; count < hnum.length; count ++){
+                        value = hnum[count];
+                        if (isNaN(value)) {
+                            value = parseInt(value, 16);
+                        } else {
+                            value = parseInt(value);
+                        }
+
+                        dnum += value * (16**(hnum.length - 1 - count))
+
+                    }
+                    document.querySelector('h4').innerHTML = dnum;
+                    
+                    if (event.key === 'Enter') {
+                        document.querySelector('h4').innerHTML = '';
+                    }
+
+                    document.querySelector('#hextoden').addEventListener('submit', function(event) {
+                        event.preventDefault();
+
+                        document.querySelector('h4').innerHTML = '';
+                        document.querySelector('h2').innerHTML = dnum;
+                    });
+
+                });
+            </script>
+        </form>
+
+        <script src="script.js"></script>
+    </body>
+</html>

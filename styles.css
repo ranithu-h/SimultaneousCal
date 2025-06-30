@@ -1,0 +1,144 @@
+body{
+    background-color: #000;
+    color: blanchedalmond;
+    font-family: "Helvetica", sans-serif;
+}
+
+input[type="radio"] {   
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 3px solid #2F8D46;
+    border-radius: 100%;
+    background-color: transparent;
+    transition: background-color 0.2s ease-in-out;
+    margin-right: 8px;
+}
+
+input[type="radio"]:checked {
+    background-color: #ffcc00;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 13vh;
+}
+
+.rounded-corners {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px 50px;
+    background: #2F8D46;
+    padding: 25px; 
+    width: 200px;
+    height: 50px;
+    font-size: larger;
+}
+
+a{
+    text-decoration: none;
+}
+
+.rectangle{
+    width: 400px;
+    height: 50px;
+    background-color: #2F8D46;
+    border-radius: 10px;
+    color: blanchedalmond;
+    font-size: medium;
+    border: 2px solid #008cba;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.rectangle:hover{
+    background-color: #2b7630;
+}
+
+.form-container {
+    padding: 10px;
+}
+
+input[type="text"]{
+    width: 100px;
+    margin-right: 2px;
+}
+
+.form-label {
+    margin-right: 5px;
+}
+
+
+
+input[type="text"],
+input[type="number"],
+input[type="submit"],
+button {
+    font-size: medium;
+    margin-top: 15px;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 2px solid #008cba;
+    border-radius: 5px;
+    background-color: #000;
+    color: blanchedalmond;
+}
+
+.form-label {
+    margin-right: 5px;
+}
+
+input[type="submit"], button {
+    background-color: #2F8D46;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #2b7630;
+}
+
+input[type="submit"].clicked {
+    background-color: #2F8D46;
+}
+
+button:hover {
+    background-color: #2b7630;
+}
+
+button.clicked {
+    background-color: #2F8D46;
+}
+
+h4{
+    font-weight: normal;
+    color:dimgray;
+}
+
+p1{
+    font-weight: normal;
+    color:dimgray;
+}
+
+.forms-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #008cba;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.form-container {
+    padding: 10px;
+    margin-bottom: 10px;
+}

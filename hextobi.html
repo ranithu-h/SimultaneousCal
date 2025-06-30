@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="initial scale=1, width=device-width">
+        <link href="styles.css" rel="stylesheet">
+        <link href="icoy.ico" rel="icon">
+        <title>Hexadecimal to Binary Converter</title>
+    </head>
+    <body>
+        <p style="text-align: right; font-size: 15px;">
+            <input name="color" selected type="radio" value="dark" id="dark">Dark
+            <input name="color" type="radio" value="red" id="red">Flamey Red
+            <input name="color" type="radio" value="light" id="light">Light
+            <input name="color" type="radio" value="blue" id="blue">Smooth Blue
+        </p>
+
+        <form id="hextobi">
+            <input autofocus id="hex" type="text" placeholder="Enter Hexadecimal" style="width: 80px;">
+            <input type="submit">
+            <h3>Your Binary is: </h3><h4></h4><h2></h2>
+            <script>
+                document.querySelector('#hextobi').addEventListener('keyup', function(event){
+                    event.preventDefault();
+
+                    let hnum = document.querySelector('#hex').value;
+                    let bnum = '';
+
+                    for (let i = 0; i < hnum.length; i++){
+                        let value = hnum[i];
+                        let dnum = 0;
+
+                        if (isNaN(value)) {
+                            dnum = parseInt(value, 16);
+                        } else {
+                            dnum = parseInt(value);
+                        }
+
+                        bnum += dnum.toString(2).padStart(4, '0');
+                    }
+
+                    if ((bnum.length % 4) !== 0){
+                        bnum = '0'.repeat(4 - (bnum.length % 4)) + bnum;
+                    }
+
+                    document.querySelector('h4').innerHTML = bnum;
+
+                    document.querySelector('#hextobi').addEventListener('submit', function(event) {
+                        event.preventDefault();
+
+                        document.querySelector('h4').innerHTML = '';
+                        document.querySelector('h2').innerHTML = bnum;
+                    });
+                    
+                    if (event.key === 'Enter') {
+                        document.querySelector('h4').innerHTML = '';
+                    }
+
+                });
+            </script>
+        </form>
+
+        <script src="script.js"></script>
+    </body>
+</html>

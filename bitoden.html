@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="initial scale=1, width=device-width">
+        <link href="styles.css" rel="stylesheet">
+        <link href="ico2.ico" rel="icon">
+        <title>Binary to Denary Converter</title>
+    </head>
+    <body>
+        <p style="text-align: right; font-size: 15px;">
+            <input name="color" selected type="radio" value="dark" id="dark">Dark
+            <input name="color" type="radio" value="red" id="red">Flamey Red
+            <input name="color" type="radio" value="light" id="light">Light
+            <input name="color" type="radio" value="blue" id="blue">Smooth Blue
+        </p>
+
+        <form id="bitoden">
+            <input autofocus id="bin" type="text" placeholder="Enter Binary" style="width: 80px;">
+            <input type="submit">
+            <h3>Your Denary is: </h3><h4></h4><h2></h2>
+            <script>
+                document.querySelector('#bitoden').addEventListener('keyup', function(event) {
+                    event.preventDefault();
+
+                    let bnum = document.querySelector('#bin').value;
+
+                    if (bnum === ''){
+                        return 
+                    }
+
+                    let dnum = 0;
+                    
+                    for (let i = 0; i < bnum.length; i++){
+                        if (bnum.slice(i, i + 1) === '1'){
+                            dnum += Math.pow(2, (bnum.length - i - 1));
+                        }
+                    }
+
+                    document.querySelector('h4').innerHTML = dnum
+
+                    document.querySelector('#bitoden').addEventListener('submit', function(event) {
+                        event.preventDefault();
+
+                        document.querySelector('h4').innerHTML = '';
+                        document.querySelector('h2').innerHTML = dnum;
+                    });
+                    
+                    if (event.key === 'Enter') {
+                        document.querySelector('h4').innerHTML = '';
+                    }
+                });
+            </script>
+        </form>
+
+        <script src="script.js"></script>
+    </body>
+</html>
