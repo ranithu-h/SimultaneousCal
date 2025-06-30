@@ -1,5 +1,5 @@
 body{
-    background-color: #131417
+    background-color: #131417;
     color: blanchedalmond;
     font-family: "Helvetica", sans-serif;
 }
@@ -152,4 +152,5 @@ p1{
     align-items: center;
     gap: 75px;
     margin-top: 40px;
+    margin-bottom: 50px;
 }
