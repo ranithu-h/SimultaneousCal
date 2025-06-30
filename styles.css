@@ -24,6 +24,7 @@ input[type="radio"]:checked {
     justify-content: center;
     align-items: center;
     height: 13vh;
+    margin-top: 40px;
 }
 
 .rounded-corners {
@@ -36,6 +37,7 @@ input[type="radio"]:checked {
     width: 200px;
     height: 50px;
     font-size: larger;
+    margin-bottom: 40px; 
 }
 
 a{
@@ -141,4 +143,12 @@ p1{
 .form-container {
     padding: 10px;
     margin-bottom: 10px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 75px;
+    margin-top: 40px;
 }
