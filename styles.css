@@ -1,7 +1,6 @@
 body{
-    background-color: #131417;
-    color: blanchedalmond;
-    font-family: "Helvetica", sans-serif;
+    font-family: "Zabal DEMO";
+    font-weight: lighter;
 }
 
 input[type="radio"] {   
@@ -32,11 +31,11 @@ input[type="radio"]:checked {
     justify-content: center;
     align-items: center;
     border-radius: 15px 50px;
-    background: #2F8D46;
+    background: linear-gradient(135deg, #2F8D46 57%, #56C596 100%);
     padding: 25px; 
     width: 200px;
     height: 50px;
-    font-size: larger;
+    font-size: x-large;
     margin-bottom: 40px; 
 }
 
@@ -47,12 +46,11 @@ a{
 .rectangle{
     width: 400px;
     height: 50px;
-    background-color: #2F8D46;
+    background: linear-gradient(135deg, #2F8D46 65%, #56C596 100%);
     border-radius: 10px;
     color: blanchedalmond;
     font-size: medium;
-    border: 2px solid #008cba;
-    transition: background-color 0.3s ease;
+    border: 1px solid #186e8a;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,7 +60,7 @@ a{
 }
 
 .rectangle:hover{
-    background-color: #2b7630;
+    background: #2b7630;
 }
 
 .form-container {
@@ -152,5 +150,5 @@ p1{
     align-items: center;
     gap: 75px;
     margin-top: 40px;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
 }
