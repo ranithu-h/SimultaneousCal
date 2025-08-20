@@ -28,16 +28,16 @@ function updateFormStyles(backgroundColor, textcolor) {
 function applyColorScheme(color) {
     if (color === 'red') {
         body.className = 'red';
-        updateFormStyles('#f04300', 'blanchedalmond');
+        updateFormStyles('#ab4922ff', '#a7c49cff');
     } else if (color === 'blue') {
         body.className = 'blue';
-        updateFormStyles('#8AF6FF', '#131417');
+        updateFormStyles('#d3fafeff', '#0f1a0dff');
     } else if (color === 'dark') {
         body.className = 'dark';
-        updateFormStyles('#131417', 'blanchedalmond');
+        updateFormStyles('#0f1a0dff', '#a7c49cff');
     } else if (color === 'light') {
         body.className = 'light';
-        updateFormStyles('blanchedalmond', '#131417');
+        updateFormStyles('#d2f9c4ff', '#0f1a0dff');
     }
 }
 
