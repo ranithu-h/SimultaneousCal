@@ -69,7 +69,8 @@ document.querySelector('#dark').addEventListener('click', function() {
 document.querySelector('#light').addEventListener('click', function() {
     const color = 'light';
     applyColorScheme(color);
-    saveColorScheme(color);});
+    saveColorScheme(color);
+});
 
 document.querySelector('form').addEventListener('input', function(event) {
     let inputs = document.querySelectorAll('input[type="text"]');
