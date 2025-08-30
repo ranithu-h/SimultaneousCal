@@ -79,7 +79,6 @@ document.querySelector('form').addEventListener('input', function(event) {
     });
 });
 
-
 document.querySelector('form').addEventListener('keydown', function(event) {
     const isArrowKey = ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key);
     if (!isArrowKey) return;
