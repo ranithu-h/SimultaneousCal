@@ -39,6 +39,7 @@ input[type="radio"]:checked {
 }
 
 a{
+    color: blue;
     text-decoration: none;
 }
 

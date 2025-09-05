@@ -8,12 +8,16 @@
         <title>Binary to Denary Converter</title>
     </head>
     <body>
-        <p style="text-align: right; font-size: 12px;">
-            <input name="color" selected type="radio" value="dark" id="dark">Dark
-            <input name="color" type="radio" value="red" id="red">Flamey Red
-            <input name="color" type="radio" value="light" id="light">Light
-            <input name="color" type="radio" value="blue" id="blue">Smooth Blue
-        </p>
+        <div style="display: flex; justify-content: space-between; align-items: center; position: relative; top: -10px;">
+            <a href="index.html"><< Main Page</a>
+
+            <p style="text-align: right; font-size: 12px;">
+                <input name="color" selected type="radio" value="dark" id="dark">Dark
+                <input name="color" type="radio" value="red" id="red">Flamey Red
+                <input name="color" type="radio" value="light" id="light">Light
+                <input name="color" type="radio" value="blue" id="blue">Smooth Blue
+            </p>
+        </div>
 
         <form id="bitoden">
             <input autofocus id="bin" type="text" placeholder="Enter Binary" style="width: 80px;">
