@@ -38,6 +38,7 @@
                     for (let i = 0; i < bnum.length; i++){
                         if (bnum.slice(i, i + 1) === '1'){
                             dnum += Math.pow(2, (bnum.length - i - 1));
+                        }
                     }
 
                     document.querySelector('h4').innerHTML = dnum
