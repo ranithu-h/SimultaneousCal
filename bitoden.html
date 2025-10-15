@@ -34,20 +34,34 @@
                     }
 
                     let dnum = 0;
+                    let flag = false;
                     
                     for (let i = 0; i < bnum.length; i++){
                         if (bnum.slice(i, i + 1) === '1'){
                             dnum += Math.pow(2, (bnum.length - i - 1));
+                        } else {
+                            if (bnum.slice(i, i + 1) !== '1' || bnum.slice(i, i + 1) !== '0') {
+                                dnum = 0
+                                flag = true
+                            }
                         }
                     }
 
-                    document.querySelector('h4').innerHTML = dnum
+                    if (flag == true){
+                        document.querySelector('h4').innerHTML = "Binary should be only 1 or 0"
+                    } else {
+                        document.querySelector('h4').innerHTML = dnum
+                    }
 
                     document.querySelector('#bitoden').addEventListener('submit', function(event) {
                         event.preventDefault();
 
                         document.querySelector('h4').innerHTML = '';
-                        document.querySelector('h2').innerHTML = dnum;
+                        if (flag == true){
+                            document.querySelector('h2').innerHTML = "Binary should be only 1 or 0"
+                        } else {
+                            document.querySelector('h2').innerHTML = dnum
+                        }
                     });
                     
                     if (event.key === 'Enter') {
